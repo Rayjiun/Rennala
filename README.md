@@ -1,8 +1,10 @@
 # Rennala
-A drag and drop tool to package all your GDT contents automatically for Call of Duty: Black Ops III
+A drag and drop tool to package all your content automatically for Call of Duty: Black Ops III
 
 ### Features: 
-- Allows you to drag and drop your GDT file and will generate an output for you
+- Will copy & paste assets from the following file extensions:
+    - SZC: CSVs and sound files
+    - GDT: FX, models, animations and images
 - Spits out a .txt to automate the .zone process as much as possible
 
 # Requirements:
@@ -11,7 +13,7 @@ A drag and drop tool to package all your GDT contents automatically for Call of 
 # How to use
 Download Rennala from the [Releases](https://github.com/MikeyRay/Rennala/releases) section.
 
-Once downloaded, you can use the .exe to your advantage! Drag and drop any GDT files onto it and the rest will be done for you.
+Once downloaded, you can use the .exe to your advantage! Drag and drop any of the supported files onto it and the rest will be done for you.
 
 # Credits
 - MikeyRay: Developer

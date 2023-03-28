@@ -62,16 +62,16 @@ namespace Rennala.Logic.GDT
             string? root = Location.GetBlackOpsRoot();
             if (root == null)
             {
-                CLI.ErrorMessage("* TA_GAME_PATH Environment Variable is not defined");
+                CLI.ErrorMessage("! TA_GAME_PATH Environment Variable is not defined");
                 return;
             }
 
             // Add the GDT itself in there
             file = file.Replace(root, ""); // Remove the BO3 root path so we just get the full path name for it
             lines = lines.Append(file).ToArray();
+            Duplication dupes = new();
 
             string outputDir = Path.Combine(Location.GetExeDirectory(), "RennalaOutput");
-
             foreach (string line in lines)
             {
                 // It's way too small to even be possible to be one of our needed strings
@@ -116,12 +116,23 @@ namespace Rennala.Logic.GDT
                 }
 
                 string endAsset = Path.Combine(outputDir, assetPath);
-                if (File.Exists(endAsset))
+                if (dupes.IsDuplicate(endAsset)) // We add the duplication stuff, so it only gets logged once as the same asset can be referenced multiple times in one GDT
                 {
                     continue;
                 }
+                else
+                {
+                    dupes.Add(endAsset);
+                }
 
-                splitString = assetPath.Split("\\"); // Get the directory the asset has to end up in
+                if (File.Exists(endAsset)) // It's already been copied, skip!
+                {
+                    CLI.NoticeMessage($"? {endAsset} was already present or copied. Skipping!");
+                    continue;
+                }
+
+                // Get the directory, and create it if it hasn't been already
+                splitString = assetPath.Split("\\");
                 assetPath = assetPath.Replace(splitString[splitString.Length - 1], ""); // Get the path minus the asset
                 string endDir = Path.Combine(outputDir, assetPath);
                 if (!Directory.Exists(endDir))
@@ -133,7 +144,7 @@ namespace Rennala.Logic.GDT
             }
 
             Writer.Write(); // Write the zone.txt
-            CLI.SuccessMessage($"* Successfully parsed {GDT}");
+            CLI.SuccessMessage($"> Successfully parsed {GDT}");
         }
     }
 }

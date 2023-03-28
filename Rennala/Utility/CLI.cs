@@ -25,7 +25,7 @@
         /// </summary>
         public static void WaitForUserConfirmation()
         {
-            NeutralMessage("Press any key to exit.");
+            NeutralMessage("\nPress any key to exit.");
             Console.ReadKey();
         }
     }

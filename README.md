@@ -11,7 +11,7 @@ A drag and drop tool to package all your content automatically for Call of Duty:
 - .NET Framework 6.0.0
 
 # How to use
-Download Rennala from the [Releases](https://github.com/MikeyRay/Rennala/releases) section.
+Download Rennala from the [Releases](https://github.com/Rayjiun/Rennala/releases) section.
 
 Once downloaded, you can use the .exe to your advantage! Drag and drop any of the supported files onto it and the rest will be done for you.
 

@@ -16,5 +16,5 @@ Download Rennala from the [Releases](https://github.com/MikeyRay/Rennala/release
 Once downloaded, you can use the .exe to your advantage! Drag and drop any of the supported files onto it and the rest will be done for you.
 
 # Credits
-- MikeyRay: Developer
+- Rayjiun: Developer
 - [Glitch](https://twitter.com/Glitchalodon): Program Icon

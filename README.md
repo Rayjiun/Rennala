@@ -8,7 +8,7 @@ A drag and drop tool to package all your content automatically for Call of Duty:
 - Spits out a .txt to automate the .zone process as much as possible
 
 # Requirements:
-- .NET Framework 6.0.0
+- .NET 6.0.0
 
 # How to use
 Download Rennala from the [Releases](https://github.com/Rayjiun/Rennala/releases) section.
